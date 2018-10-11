@@ -1,5 +1,8 @@
-# sumobots
-Getting started with Arduino
+# Sumobots
+
+### Getting started programming your Sumbot:
+
+Your sumobot is powered by a small microcontroller called an Arduino.  
 
 Install arduino IDE (use installer, not Windows Universal App if you intend to develop in VSCode)
 https://www.arduino.cc/en/Main/Software
@@ -22,7 +25,8 @@ In IDE -> Tools set Board to Arduino/Genuino Uno
  
  Teams can modify the motors to lower/higher torque and higher/lower speeds, or modify the wheels.
  
- Rules:
+ ### SumoBot Build Rules:
+ 
  Robots need to be autonomous. No R/C robots. 
 
 A robot may expand in size after a match begins, but must not physically separate into pieces, and must remain a single centralized robot.
@@ -42,6 +46,8 @@ No sticky tires.
 Sticky substances to improve traction are not allowed. Tires and other components of the robot in contact with the ring must not be able to pick up and hold a standard 3"x5" index card for more than two seconds
 
 No vacuum devices. 
+
+### Competition Rules:
 
 The referee will call the start, upon which the competitor can activate the robot. The robot has to wait 5 seconds after being activated before it can start.
 
