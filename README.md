@@ -2,25 +2,37 @@
 
 ### Getting started programming your Sumbot:
 
-Your sumobot is powered by a small microcontroller called an Arduino.  
+Your sumobot is powered by a small microcontroller called an Arduino. Installing the IDE and libraries will start you off with some examples. ZumoMotorExample is a simple beginner script for getting your bot to move. SumoCollisionDetect is a fully working (and complicated) sumo bot example.
 
 Install arduino IDE (use installer, not Windows Universal App if you intend to develop in VSCode)
 https://www.arduino.cc/en/Main/Software
 
 Open IDE, Tools -> Manage Libraries; Search for Zumo and add Zumo Shield library.
-Alternatively, include only the files you need from the github https://github.com/pololu/zumo-shield-arduino-library
 
-To upload code to sumobot:
+
+
+#### Using Arduino IDE
 Connect bot to computer via usb
+
 In IDE -> Tools set Board to Arduino/Genuino Uno
- set Tools -> Port to the COM port that looks right :)
+
+set Tools -> Port to the COM port that looks right :)
+
+File -> Examples -> ZumoShield -> ZumoMotorExample
+
+Upload and validate that the board responds.
+
+
+#### Using VS Code
+follow the steps here (board type is Arduino/Genuino Uno): https://www.dmcinfo.com/latest-thinking/blog/id/9484/arduino-programming-with-vscode
+
+Under the examples, look for "Examples from Custom Libraries -> ZumoShield -> ZumoMotorExample"
+
+Upload and validate that the board responds.
  
- If using VS Code, follow the steps here: https://www.dmcinfo.com/latest-thinking/blog/id/9484/arduino-programming-with-vscode
- 
- Upload a blink.ino script from examples or another script to act as a hello world, and validate that the board responds.
- 
- 
- Upgrading Sumobot Hardware (Optional)
+
+
+### Upgrading Sumobot Hardware (Optional)
  Teams can modify the I/O sensors used in the bot. By default, the bots have 6 downward facing reflection detectors. This can be reduced to 4 detectors, opening up 2 I/O ports for use with IR rangefinders. https://www.pololu.com/docs/0J57/2.c (requires soldering and board modification, don't be intimidated, this is what the Garage is for!)
  
  Teams can modify the motors to lower/higher torque and higher/lower speeds, or modify the wheels.
