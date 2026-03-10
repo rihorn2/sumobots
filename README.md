@@ -18,7 +18,9 @@ In IDE -> Tools set Board to Arduino/Genuino Uno
 
 set Tools -> Port to the COM port that looks right :)
 
-File -> Examples -> ZumoShield -> ZumoMotorExample
+Tools -> Manage Libraries -> search zumo, install the Pololu library.
+
+Copy one of the test .ino files from this repo to the ide.
 
 Upload and validate that the board responds.
 
@@ -26,11 +28,13 @@ Upload and validate that the board responds.
 #### Using VS Code
 follow the steps here (board type is Arduino/Genuino Uno): https://www.dmcinfo.com/latest-thinking/blog/id/9484/arduino-programming-with-vscode
 
-Bring up the Arduino: Library Manager (ctrl + shift + p, type arduino) and add Zumo Shield library.
+~~Bring up the Arduino: Library Manager (ctrl + shift + p, type arduino) and add Zumo Shield library.~~
 
-Under the examples, look for "Examples from Custom Libraries -> ZumoShield -> ZumoMotorExample"
+~~Under the examples, look for "Examples from Custom Libraries -> ZumoShield -> ZumoMotorExample"~~
 
-Upload and validate that the board responds.
+~~Upload and validate that the board responds.~~
+
+Trying to get this to work, there is a community fork of the old Microsoft supported Arduino extension, Arduino "Community" Edition. No success yet.
  
 
 
