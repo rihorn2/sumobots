@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<meta content='width=device-width, initial-scale=1' name='viewport'>
+<link rel="icon" type="image/png" href="https://a.pololu-files.com/assets/favicon_32x32-f40058cd34e1fec5906522ec0c9eb39b303192067c0e353a30796e859ce41106.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="https://a.pololu-files.com/assets/favicon_192x192-52532413e1c353491bfa0a2dd977aacf020e8ca4104064094121739bad21c4bf.png" sizes="192x192" />
+<link rel="icon" type="image/png" href="https://a.pololu-files.com/assets/favicon_96x96-fcf7f6d6568f76d479e5ae1822ded335e0bbd75ab7efd0de7e010bb41fd83e41.png" sizes="96x96" />
+<link rel="icon" type="image/png" href="https://a.pololu-files.com/assets/favicon_16x16-13632635dc6dd0e11ba9a38071e8218d26d62e71f8ebafacd9929c3136117372.png" sizes="16x16" />
+<link rel="apple-touch-icon" type="image/png" href="https://a.pololu-files.com/assets/favicon_96x96-fcf7f6d6568f76d479e5ae1822ded335e0bbd75ab7efd0de7e010bb41fd83e41.png" />
+<link crossorigin='anonymous' href='https://a.pololu-files.com/mirror/maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' integrity='sha256-AIodEDkC8V/bHBkfyxzolUMw57jeQ9CauwhVW6YJ9CA=' media='all' rel='stylesheet'>
+<link crossorigin='anonymous' href='https://a.pololu-files.com/mirror/cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css' integrity='sha256-2RdmDD1veq0y68SwASxtC7hKE+IBoBLjNLzKS59Ghsk=' media='all' rel='stylesheet'>
+<link crossorigin='anonymous' href='https://a.pololu-files.com/mirror/cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css' integrity='sha256-etrwgFLGpqD4oNAFW08ZH9Bzif5ByXK2lXNHKy7LQGo=' media='all' rel='stylesheet'>
+<link rel="stylesheet" crossorigin="anonymous" href="https://a.pololu-files.com/assets/application-5e7245cb97344a44fe805023cc14b21e8b357db44e3197eff48cae6fe77fb9b6.css" media="all" integrity="sha256-VouqKBpzZizjTeSzfiHxIGk+4HNbnWyZnwQxAMbk4bw=" />
+<script crossorigin='anonymous' integrity='sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=' src='https://a.pololu-files.com/mirror/code.jquery.com/jquery-1.12.4.min.js'></script>
+<script crossorigin='anonymous' integrity='sha256-4Cr335oZDYg4Di3OwgUOyqSTri0jUm2+7Gf2kH3zp1I=' src='https://a.pololu-files.com/mirror/cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js'></script>
+<script crossorigin='anonymous' integrity='sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=' src='https://a.pololu-files.com/mirror/code.jquery.com/ui/1.12.1/jquery-ui.min.js'></script>
+<link crossorigin='anonymous' href='https://a.pololu-files.com/mirror/code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css' integrity='sha256-RPilbUJ5F7X6DdeTO6VFZ5vl5rO5MJnmSk4pwhWfV8A' media='all' rel='stylesheet'>
+<script class='braintree-gateway' src='https://js.braintreegateway.com/web/3.88.4/js/client.min.js'></script>
+<script class='braintree-gateway' src='https://js.braintreegateway.com/web/3.88.4/js/hosted-fields.min.js'></script>
+<script src="https://a.pololu-files.com/assets/application-c44c8456ebd557c1e5d5c6d6b490b97e730d7493d84cc3a6b32e3029c93d6873.js" crossorigin="anonymous" integrity="sha256-kYZ7+Tw5HHNT8kP95bQ4iNk49RZkys0k2KsvSoKPY6U="></script>
+<script type="importmap" data-turbo-track="reload">{
+  "integrity":
+{"https://a.pololu-files.com/assets/application_module-765f0f526c59caa9c9857c01889e68833710c17121ab6f9093f3a0a809af7bd4.js":"sha256-s+WZHcA06TsuXtPz2xeDSGgG6j+QSXvT2ghPYhJLLow=","https://a.pololu-files.com/assets/price_notification-f64b0ae30b1bb595d10d8954f34036fbff24e2c81e1c7a9e581f03692cc149c3.js":"sha256-nL1KwUBafy6EPV1yoK+yXM1O5GODfiG083pcMsXgCxs=","https://a.pololu-files.com/assets/stock_notification-87bb320c31885d5b381c69e4a05013db3f11fb479d693729b0e5de58ae356892.js":"sha256-yqOxxloFhGTJ98f3K+XH50QttcrJOBxnARzUT78kLCc="},
+  "imports": {
+    "application": "https://a.pololu-files.com/assets/application_module-765f0f526c59caa9c9857c01889e68833710c17121ab6f9093f3a0a809af7bd4.js",
+    "price_notification": "https://a.pololu-files.com/assets/price_notification-f64b0ae30b1bb595d10d8954f34036fbff24e2c81e1c7a9e581f03692cc149c3.js",
+    "stock_notification": "https://a.pololu-files.com/assets/stock_notification-87bb320c31885d5b381c69e4a05013db3f11fb479d693729b0e5de58ae356892.js"
+  }
+}</script>
+
+<script type="module">import "application"</script>
+<script>
+  if(document.domain.indexOf("pololu-files.com") == -1) {
+    $.ajax({
+    url: "https://www.googletagmanager.com/gtag/js?id=G-G4ENPJ5RV1",
+    dataType: "script"
+    });
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', "G-G4ENPJ5RV1");
+  }
+</script>
+
+<link rel="stylesheet" href="https://a.pololu-files.com/assets/print-ac5d562ac93a31ac3e5c942e261bf17032bf5da61b940dea46300fe83f1e72dc.css" media="print" />
+
+<title>Pololu - 2.c. Adding a Zumo reflectance sensor array (optional)</title>
+
+<meta name="description" content="User’s manual for the Pololu Zumo Shield for Arduino." />
+<meta name="keywords" content="Pololu,robotics,robot electronics,robot kits,robot parts,ir beacon,servo controller,motor controller,robot sensors,robot chassis,robot gearboxes,robot tires, ball casters, tamiya parts,elenco kits" />
+<meta property="og:url" content="https://www.pololu.com/docs/0J57/2.c" />
+<meta property="og:title" content="Pololu - 2.c. Adding a Zumo reflectance sensor array (optional)" />
+<meta property="og:description" content="User’s manual for the Pololu Zumo Shield for Arduino." />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@Pololu" />
+<meta name="twitter:title" content="Pololu - 2.c. Adding a Zumo reflectance sensor array (optional)" />
+<meta name="twitter:description" content="User’s manual for the Pololu Zumo Shield for Arduino." />
+<script class='structured_data' type='application/ld+json'>
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Support","item":"https://www.pololu.com/support"},{"@type":"ListItem","position":2,"name":"Pololu Zumo Shield for Arduino User’s Guide","item":"https://www.pololu.com/docs/0J57"},{"@type":"ListItem","position":3,"name":"2. Assembly","item":"https://www.pololu.com/docs/0J57/2"}]}
+</script>
+
+<script src="https://a.pololu-files.com/assets/syntaxhighlight-91017fb9868118fd42306075e0164112dd3d3e16331dc462f55ad4497e7fca3d.js" defer="defer"></script>
+</head>
+
+<body class='math_ignore' onload='externalLinksNewWindow(); if(document.onLoadHandler){document.onLoadHandler();}  '>
+
+<div id='main'>
+<h2 id="breadcrumbs"><a href="/support">Support</a> &raquo; <a href="/docs/0J57">Pololu Zumo Shield for Arduino User’s Guide</a> &raquo; <a href="/docs/0J57/2">2. Assembly</a> &raquo;</h2>
+<h1 id="page_title">2.c. Adding a Zumo reflectance sensor array (optional)</h1>
+<div data-url='/docs/0J57/2.c' id='contents'>
+<!-- CONTENTS_BEGIN /docs/0J57/2.c -->
+<div data-javascript-not-loaded-message='&lt;!-- javascript_not_loaded_message --&gt;&lt;strong&gt;Warning:&lt;/strong&gt; Your browser failed to load our JavaScript files, which are required for checkout.  Please check that you are not blocking or disabling our scripts and &lt;a href=&quot;/contact&quot;&gt;contact us&lt;/a&gt; if you are still unable to proceed.' id='javascript_not_loaded_message' style='display:none;'></div>
+<div data-braintree-not-loaded-message='&lt;!-- braintree_not_loaded_message --&gt;&lt;p&gt;&lt;strong&gt;Warning:&lt;/strong&gt; Your browser failed to connect to our secure payment processor, Braintree Payments.  You will be unable to enter your credit card information at  the payment step of checkout unless this is fixed.&lt;/p&gt;
+&lt;p&gt;Some things to try:&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;Check for network problems or things like script blockers that could be blocking &lt;a href=&quot;https://js.braintreegateway.com/web/3.58.0/js/client.min.js&quot;&gt;this file&lt;/a&gt;.&lt;/li&gt;
+	&lt;li&gt;Try completing checkout on a device on a different network, such as a phone with Wi-Fi disabled.&lt;/li&gt;
+	&lt;li&gt;Select the option to pay with PayPal and enter your credit card on their site. (You don&amp;#8217;t need a PayPal account.)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Please &lt;a href=&quot;/contact&quot;&gt;contact us&lt;/a&gt; if you continue to have trouble with checkout!&lt;/p&gt;' id='braintree_not_loaded_message' style='display:none;'></div>
+
+<p class='navigation'>
+<a class='next_section' href='/docs/0J57/3'>
+Next:
+3.
+The Zumo Shield in detail
+</a>
+<a class='previous_section' href='/docs/0J57/2.b'>
+Previous:
+2.b.
+Assembling the Zumo Shield and chassis
+</a>
+<br class='clear_both'>
+</p>
+
+
+<div class='document_section_text'>
+<h4>Overview</h4>
+<p>The <a href="/product/1419">Zumo reflectance sensor array</a> is an easy way to add line-following and edge-detection capabilities to the Zumo robot.  It is designed specifically to mount to the front expansion area of the Zumo shield, and it includes everything you need for installation.  Note that the reflectance sensor array is not included with the Zumo shield or Zumo Robot Kit, and the Zumo robot can be used without it.  For more information on the Zumo reflectance sensor&#8217;s capabilities and how it works (including a schematic diagram), please see its <a href="/product/1419">product page</a>.  This section is devoted specifically to assembling the sensor and using it with the Zumo shield.</p>
+<table class="picture_with_caption center wide"><tr><td><img alt="" class="wide" data-gallery-pictures="[{&quot;id&quot;:&quot;0J4208&quot;,&quot;caption&quot;:&quot;\u003cp\u003eZumo reflectance sensor array with labeled sensors and dimensions.\u003c/p\u003e&quot;,&quot;url_tiny&quot;:&quot;https://a.pololu-files.com/picture/0J4208.98x98.jpg?c05f3e07444297921744f2c24058bcc3&quot;,&quot;url_medium&quot;:&quot;https://a.pololu-files.com/picture/0J4208.600x480.jpg?c05f3e07444297921744f2c24058bcc3&quot;,&quot;url_full&quot;:&quot;https://a.pololu-files.com/picture/0J4208.1200.jpg?c05f3e07444297921744f2c24058bcc3&quot;,&quot;longest_side&quot;:799}]" data-picture-id="0J4208" data-picture-longest_side="799" src="https://a.pololu-files.com/picture/0J4208.600.jpg?c05f3e07444297921744f2c24058bcc3" /></td><p></tr></table></p>
+<h4>Assembling the sensor array</h4>
+<table class="picture_with_caption right"><tr><td><a href="https://a.pololu-files.com/picture/0J4209.1200.jpg?ef179368c8e8e4bc6e1f9a7b36fd5cbb" class="noscript-fallback"><img alt="" class="zoomable" data-gallery-pictures="[{&quot;id&quot;:&quot;0J4209&quot;,&quot;caption&quot;:&quot;\u003cp\u003eZumo reflectance sensor array with included hardware.\u003c/p\u003e&quot;,&quot;url_tiny&quot;:&quot;https://a.pololu-files.com/picture/0J4209.98x98.jpg?ef179368c8e8e4bc6e1f9a7b36fd5cbb&quot;,&quot;url_medium&quot;:&quot;https://a.pololu-files.com/picture/0J4209.600x480.jpg?ef179368c8e8e4bc6e1f9a7b36fd5cbb&quot;,&quot;url_full&quot;:&quot;https://a.pololu-files.com/picture/0J4209.1200.jpg?ef179368c8e8e4bc6e1f9a7b36fd5cbb&quot;,&quot;longest_side&quot;:800}]" data-picture-id="0J4209" data-picture-longest_side="800" src="https://a.pololu-files.com/picture/0J4209.300.jpg?ef179368c8e8e4bc6e1f9a7b36fd5cbb" /></a></td><p></tr></table></p>
+<p>The Zumo reflectance sensor array ships with all of the components you need to connect it to a Zumo shield:</p>
+<ul>
+	<li>sensor array PCB with the surface-mount parts pre-populated</li>
+	<li>2&#215;12 extended 0.1″ male header (will be soldered to sensor PCB)</li>
+	<li>2&#215;12 0.1″ female header (will be soldered to Zumo shield)</li>
+	<li>1&#215;3 0.1″ straight male header (optionally soldered to sensor PCB)</li>
+	<li>1&#215;3 0.1″ right-angle male header (optionally soldered to sensor PCB)</li>
+	<li>blue shorting block</li>
+</ul>
+<p>Before soldering in the main male header strip, we recommend soldering one of the two included 1&times;3 male headers into the set of three holes along the edge of the board.   This step is optional but recommended because it allows dynamic control of the IR emitters (and red LEDs).  By controlling when these LEDs are on, you can save power and make your programs easier to debug.  If you skip this step, the IR emitters will just be on whenever the sensor array is plugged in and the Zumo is on.  We recommend using the right-angle header mounted as shown in the picture below, but the straight 3-pin header will also work if you do not have anything already soldered to the Zumo shield&#8217;s front expansion area that would interfere.  If you choose to install this header, please make sure you are doing it in a way that will not prevent installation of the sensor array (e.g. by installing it on the wrong side or by installing the right-angle pins in the wrong orientation)!  If you are going to install this 3-pin header, it is generally easier to do so before soldering the larger 24-pin header.</p>
+<p>To enable dynamic control of the IR emitters, install the 3-pin header and use the included blue shorting block to connect the LEDON pin to the appropriate digital I/O pin.  If you are using an Arduino <strong>Uno</strong> or older Arduino, you should use the shorting block to connect LEDON to <strong>digital pin 2</strong> (the position that puts it flush with the edge of the board); if you are using an Arduino <strong>Leonardo</strong> or <strong>A-Star 32U4 Prime</strong>, you should use the shorting block to connect LEDON to <strong>analog pin 4 (A4)</strong>.</p>
+<table class="picture_with_caption center"><tr><td><a href="https://a.pololu-files.com/picture/0J4212.1200.jpg?f06aaa4e9f583820bf6317d5a3cf52de" class="noscript-fallback"><img alt="" class="zoomable" data-gallery-pictures="[{&quot;id&quot;:&quot;0J4212&quot;,&quot;caption&quot;:&quot;\u003cp\u003eZumo reflectance sensor array assembled with included male header pins.\u003c/p\u003e&quot;,&quot;url_tiny&quot;:&quot;https://a.pololu-files.com/picture/0J4212.98x98.jpg?f06aaa4e9f583820bf6317d5a3cf52de&quot;,&quot;url_medium&quot;:&quot;https://a.pololu-files.com/picture/0J4212.600x480.jpg?f06aaa4e9f583820bf6317d5a3cf52de&quot;,&quot;url_full&quot;:&quot;https://a.pololu-files.com/picture/0J4212.1200.jpg?f06aaa4e9f583820bf6317d5a3cf52de&quot;,&quot;longest_side&quot;:800}]" data-picture-id="0J4212" data-picture-longest_side="800" src="https://a.pololu-files.com/picture/0J4212.400.jpg?f06aaa4e9f583820bf6317d5a3cf52de" /></a></td><p></tr></table></p>
+<p>The extended 2&#215;12 male header strip should be mounted to the sensor array PCB on the opposite side from the components.  Make sure you solder the shorter side of the pins to the PCB, not the longer side!  Note that only 12 of the 24 pins are actually used by the sensor array; these pins have silkscreen circles around them on the component side of the board, and these are the only pins that need to be soldered, though it is fine to solder all 24 pins.</p>
+<h4>Connecting to the Zumo shield</h4>
+<p>The 2&#215;12 female header included with the reflectance sensor array should be soldered to the front expansion area of the Zumo shield so that it is centered in the expansion area and flush with the Zumo chassis (rows 2 and 3).  While it is fine to solder all 24 pins to the shield, only the 12 pins required by the reflectance sensor array need to be soldered (see the <em>Array pinout</em> section below for more information on which pins are required).</p>
+<table class="picture_with_caption center"><tr><td><a href="https://a.pololu-files.com/picture/0J4216.1200.jpg?fb0a1cf2b4e3ad2bfb49b7afbf14c8ab" class="noscript-fallback"><img alt="" class="zoomable" data-gallery-pictures="[{&quot;id&quot;:&quot;0J4216&quot;,&quot;caption&quot;:&quot;\u003cp\u003eTo use the Zumo reflectance sensor array with the Zumo shield, solder the included 2\u0026#215;12 female header to the shield here (facing down).\u003c/p\u003e&quot;,&quot;url_tiny&quot;:&quot;https://a.pololu-files.com/picture/0J4216.98x98.jpg?fb0a1cf2b4e3ad2bfb49b7afbf14c8ab&quot;,&quot;url_medium&quot;:&quot;https://a.pololu-files.com/picture/0J4216.600x480.jpg?fb0a1cf2b4e3ad2bfb49b7afbf14c8ab&quot;,&quot;url_full&quot;:&quot;https://a.pololu-files.com/picture/0J4216.1200.jpg?fb0a1cf2b4e3ad2bfb49b7afbf14c8ab&quot;,&quot;longest_side&quot;:800}]" data-picture-id="0J4216" data-picture-longest_side="800" src="https://a.pololu-files.com/picture/0J4216.400.jpg?fb0a1cf2b4e3ad2bfb49b7afbf14c8ab" /></a></td><p></tr></table>
+<table class="picture_with_caption center"><tr><td><a href="https://a.pololu-files.com/picture/0J4210.1200.jpg?e9551f89972014aa699a95cc0680aeb3" class="noscript-fallback"><img alt="" class="zoomable" data-gallery-pictures="[{&quot;id&quot;:&quot;0J4210&quot;,&quot;caption&quot;:&quot;\u003cp\u003eTo use the Zumo reflectance sensor array with the Zumo shield, solder the included 2\u0026#215;12 female header to the shield as shown.\u003c/p\u003e&quot;,&quot;url_tiny&quot;:&quot;https://a.pololu-files.com/picture/0J4210.98x98.jpg?e9551f89972014aa699a95cc0680aeb3&quot;,&quot;url_medium&quot;:&quot;https://a.pololu-files.com/picture/0J4210.600x480.jpg?e9551f89972014aa699a95cc0680aeb3&quot;,&quot;url_full&quot;:&quot;https://a.pololu-files.com/picture/0J4210.1200.jpg?e9551f89972014aa699a95cc0680aeb3&quot;,&quot;longest_side&quot;:800}]" data-picture-id="0J4210" data-picture-longest_side="800" src="https://a.pololu-files.com/picture/0J4210.400.jpg?e9551f89972014aa699a95cc0680aeb3" /></a></td></tr></table></p>
+<p>With the female header in place, the assembled sensor array can be plugged directly into the Zumo shield.</p>
+<table class="side_by_side_pics">
+	<tr>
+		<td><table class="picture_with_caption center"><tr><td><a href="https://a.pololu-files.com/picture/0J4213.1200.jpg?3d397f540c01698a0bf33e3b2cbdc3e0" class="noscript-fallback"><img alt="" class="zoomable" data-gallery-pictures="[{&quot;id&quot;:&quot;0J4213&quot;,&quot;caption&quot;:&quot;\u003cp\u003eZumo reflectance sensor array on a Zumo robot.\u003c/p\u003e&quot;,&quot;url_tiny&quot;:&quot;https://a.pololu-files.com/picture/0J4213.98x98.jpg?3d397f540c01698a0bf33e3b2cbdc3e0&quot;,&quot;url_medium&quot;:&quot;https://a.pololu-files.com/picture/0J4213.600x480.jpg?3d397f540c01698a0bf33e3b2cbdc3e0&quot;,&quot;url_full&quot;:&quot;https://a.pololu-files.com/picture/0J4213.1200.jpg?3d397f540c01698a0bf33e3b2cbdc3e0&quot;,&quot;longest_side&quot;:800}]" data-picture-id="0J4213" data-picture-longest_side="800" src="https://a.pololu-files.com/picture/0J4213.276.jpg?3d397f540c01698a0bf33e3b2cbdc3e0" /></a></td></tr></table></td>
+		<td><table class="picture_with_caption center"><tr><td><a href="https://a.pololu-files.com/picture/0J4214.1200.jpg?fcb59377e1a393539427c563da1f9e1a" class="noscript-fallback"><img alt="" class="zoomable" data-gallery-pictures="[{&quot;id&quot;:&quot;0J4214&quot;,&quot;caption&quot;:&quot;\u003cp\u003eZumo reflectance sensor array on a Zumo robot, bottom view.\u003c/p\u003e&quot;,&quot;url_tiny&quot;:&quot;https://a.pololu-files.com/picture/0J4214.98x98.jpg?fcb59377e1a393539427c563da1f9e1a&quot;,&quot;url_medium&quot;:&quot;https://a.pololu-files.com/picture/0J4214.600x480.jpg?fcb59377e1a393539427c563da1f9e1a&quot;,&quot;url_full&quot;:&quot;https://a.pololu-files.com/picture/0J4214.1200.jpg?fcb59377e1a393539427c563da1f9e1a&quot;,&quot;longest_side&quot;:800}]" data-picture-id="0J4214" data-picture-longest_side="800" src="https://a.pololu-files.com/picture/0J4214.276.jpg?fcb59377e1a393539427c563da1f9e1a" /></a></td></tr></table></td>
+	</tr>
+</table>
+<p class="note">The reflectance sensor array features two visible (red) LEDs in series with the IR emitter LEDs, so you can use the red LEDs to tell when the emitters are on and off.</p>
+<h4>Array pinout</h4>
+<p>The Zumo reflectance sensor array gets all the necessary power and I/O connections from the 12 header pins that are circled on the silkscreen:</p>
+<table class="picture_with_caption center wide"><tr><td><img alt="" class="wide" data-gallery-pictures="[{&quot;id&quot;:&quot;0J4217&quot;,&quot;caption&quot;:&quot;\u003cp\u003eDefault pin mapping of the Zumo reflectance sensor array.\u003c/p\u003e&quot;,&quot;url_tiny&quot;:&quot;https://a.pololu-files.com/picture/0J4217.98x98.jpg?4203433b207299cdd910c5f3e11e68a5&quot;,&quot;url_medium&quot;:&quot;https://a.pololu-files.com/picture/0J4217.600x480.jpg?4203433b207299cdd910c5f3e11e68a5&quot;,&quot;url_full&quot;:&quot;https://a.pololu-files.com/picture/0J4217.1200.jpg?4203433b207299cdd910c5f3e11e68a5&quot;,&quot;longest_side&quot;:798}]" data-picture-id="0J4217" data-picture-longest_side="798" src="https://a.pololu-files.com/picture/0J4217.600.jpg?4203433b207299cdd910c5f3e11e68a5" /></td><p></tr></table></p>
+<p>The default I/O connections are to pins that are otherwise unused by the Zumo shield.  The shield uses one digital I/O pin for each sensor (5, A2, A0, 11, A3, and 4), and if you add the LEDON shorting block, one additional pin (either A4 or 2) is used.  To configure the <code>ZumoReflectanceSensorArray</code> object to use this default pinout, simply call <code>init</code> with no arguments:</p>
+<pre name="code" class="c">reflectanceSensors.init();</pre>
+<p class="note">If you opt to leave off the LEDON shorting block, you should use the <code>QTR_NO_EMITTER_PIN</code> initialization parameter: <code>reflectanceSensors.init(QTR_NO_EMITTER_PIN)</code>.  Otherwise, the library code will still be trying to do something with the emitter pin (A4 or 2, depending on which Arduino you are using), and this would interfere with your being able to use that pin for alternate purposes.</p>
+<p>When soldering the male 2&#215;12 header to the sensor array, you only need to solder those pins that you will be using.  If you solder all 24 pins, the sensor array will be connected to additional pins from the Zumo shield&#8217;s front expansion area, though the array does not do anything with them in its default configuration:</p>
+<table class="picture_with_caption center wide"><tr><td><img alt="" class="wide" data-gallery-pictures="[{&quot;id&quot;:&quot;0J4218&quot;,&quot;caption&quot;:&quot;\u003cp\u003ePinout of the 2\u0026#215;12 region of the Zumo shield\u0026#8217;s front expansion area where the Zumo reflectance sensor array connects.\u003c/p\u003e&quot;,&quot;url_tiny&quot;:&quot;https://a.pololu-files.com/picture/0J4218.98x98.jpg?f78aefe2b376362d706b21f64cc28bc7&quot;,&quot;url_medium&quot;:&quot;https://a.pololu-files.com/picture/0J4218.600x480.jpg?f78aefe2b376362d706b21f64cc28bc7&quot;,&quot;url_full&quot;:&quot;https://a.pololu-files.com/picture/0J4218.1200.jpg?f78aefe2b376362d706b21f64cc28bc7&quot;,&quot;longest_side&quot;:800}]" data-picture-id="0J4218" data-picture-longest_side="800" src="https://a.pololu-files.com/picture/0J4218.600.jpg?f78aefe2b376362d706b21f64cc28bc7" /></td><p></tr></table></p>
+<h4>Disabling or remapping sensors</h4>
+<p>Many applications do not require all six reflectance sensors, and you might want additional I/O lines for other things (e.g. obstacle detectors).  In such cases, you can disable specific sensors and free up their associated I/O lines.  The array PCB has six pairs of through holes, each of which corresponds to a different sensor.  The order of the pairs matches the order of the sensors.  When viewing the component side of the PCB, the right hole of each pair connects to an Arduino I/O line and the left hole connects to sensor.  There is a single trace on the component side of the PCB between the two holes of each pair, and this trace can be cut to disable the sensor and free up the I/O line.  The proper place to cut is marked on the silkscreen by carets.</p>
+<table class="picture_with_caption center"><tr><td><a href="https://a.pololu-files.com/picture/0J4219.1200.jpg?f46250befed6319737a435ac736f48d9" class="noscript-fallback"><img alt="" class="zoomable" data-gallery-pictures="[{&quot;id&quot;:&quot;0J4219&quot;,&quot;caption&quot;:&quot;\u003cp\u003eDisabling or remapping a sensor on the Zumo reflectance sensor array.\u003c/p\u003e&quot;,&quot;url_tiny&quot;:&quot;https://a.pololu-files.com/picture/0J4219.98x98.jpg?f46250befed6319737a435ac736f48d9&quot;,&quot;url_medium&quot;:&quot;https://a.pololu-files.com/picture/0J4219.600x480.jpg?f46250befed6319737a435ac736f48d9&quot;,&quot;url_full&quot;:&quot;https://a.pololu-files.com/picture/0J4219.1200.jpg?f46250befed6319737a435ac736f48d9&quot;,&quot;longest_side&quot;:800}]" data-picture-id="0J4219" data-picture-longest_side="800" src="https://a.pololu-files.com/picture/0J4219.400.jpg?f46250befed6319737a435ac736f48d9" /></a></td><p></tr></table></p>
+<p>For example, if you want to use your Zumo for solving a line maze, you can likely get by with just four sensors: you can use the middle two sensors for tracking the line and the outer two sensors for detecting intersections.  To free up the I/O lines associated with the other two sensors, you could make the following modification:</p>
+<table class="picture_with_caption center"><tr><td><a href="https://a.pololu-files.com/picture/0J4220.1200.jpg?d95e134897594363e831847e6258090e" class="noscript-fallback"><img alt="" class="zoomable" data-gallery-pictures="[{&quot;id&quot;:&quot;0J4220&quot;,&quot;caption&quot;:&quot;\u003cp\u003eDisabling sensors A2 and A3 on the Zumo reflectance sensor array.\u003c/p\u003e&quot;,&quot;url_tiny&quot;:&quot;https://a.pololu-files.com/picture/0J4220.98x98.jpg?d95e134897594363e831847e6258090e&quot;,&quot;url_medium&quot;:&quot;https://a.pololu-files.com/picture/0J4220.600x480.jpg?d95e134897594363e831847e6258090e&quot;,&quot;url_full&quot;:&quot;https://a.pololu-files.com/picture/0J4220.1200.jpg?d95e134897594363e831847e6258090e&quot;,&quot;longest_side&quot;:800}]" data-picture-id="0J4220" data-picture-longest_side="800" src="https://a.pololu-files.com/picture/0J4220.400.jpg?d95e134897594363e831847e6258090e" /></a></td><p></tr></table></p>
+<p>Now you effectively have a four-sensor array and analog pins A2 and A3 are available for general-purpose use.  To configure the <code>ZumoReflectanceSensorArray</code> object to use this new configuration, call <code>init</code> with these arguments:</p>
+<pre name="code" class="c">byte pins[] = {4, 11, A0, 5};
+reflectanceSensors.init(pins, 4);</pre>
+<p>Alternatively, you could make two <code>ZumoReflectanceSensorArray</code> objects, one for the two exterior sensors and another for the two interior sensors, which might allow for cleaner code, but the drawback is that you can no longer read all four sensors in parallel with this approach.</p>
+<p>If you later decide you want to re-enable those sensors, you can connect across the cut trace with a wire, or you can use a wire to remap the sensor to a different pin.  The following example shows how you could re-enable the A2 sensor and remap the A3 sensor to pin A5 instead:</p>
+<table class="picture_with_caption center"><tr><td><a href="https://a.pololu-files.com/picture/0J4221.1200.jpg?7a0e6251915685ca676c55c2c6a3e367" class="noscript-fallback"><img alt="" class="zoomable" data-gallery-pictures="[{&quot;id&quot;:&quot;0J4221&quot;,&quot;caption&quot;:&quot;\u003cp\u003eRe-enabling sensor A2 and remapping sensor A3 to A5 on the Zumo reflectance sensor array.\u003c/p\u003e&quot;,&quot;url_tiny&quot;:&quot;https://a.pololu-files.com/picture/0J4221.98x98.jpg?7a0e6251915685ca676c55c2c6a3e367&quot;,&quot;url_medium&quot;:&quot;https://a.pololu-files.com/picture/0J4221.600x480.jpg?7a0e6251915685ca676c55c2c6a3e367&quot;,&quot;url_full&quot;:&quot;https://a.pololu-files.com/picture/0J4221.1200.jpg?7a0e6251915685ca676c55c2c6a3e367&quot;,&quot;longest_side&quot;:800}]" data-picture-id="0J4221" data-picture-longest_side="800" src="https://a.pololu-files.com/picture/0J4221.400.jpg?7a0e6251915685ca676c55c2c6a3e367" /></a></td><p></tr></table></p>
+<p>To configure the <code>ZumoReflectanceSensorArray</code> object to use this remapped configuration, call <code>init</code> with these arguments:</p>
+<pre name="code" class="c">byte pins[] = {4, A5, 11, A0, A2, 5};
+reflectanceSensors.init(pins, 6);</pre>
+<p>Or, if you are not using an I/O line to control the IR emitters:</p>
+<pre name="code" class="c">byte pins[] = {4, A5, 11, A0, A2, 5};
+reflectanceSensors.init(pins, 6, 2000, QTR_NO_EMITTER_PIN);  // 2000 = timeout after 2 ms</pre>
+
+</div>
+<p class='navigation'>
+<a class='next_section' href='/docs/0J57/3'>
+Next:
+3.
+The Zumo Shield in detail
+</a>
+<a class='previous_section' href='/docs/0J57/2.b'>
+Previous:
+2.b.
+Assembling the Zumo Shield and chassis
+</a>
+<br class='clear_both'>
+</p>
+
+<div id="small_related_items"><div><h2>Related products</h2>
+<div>
+<table class='linkable_item_list'>
+<tr>
+<td class='img'>
+<a href="/product/1419"><img alt="" src="https://a.pololu-files.com/picture/0J4209.50x40.jpg?ef179368c8e8e4bc6e1f9a7b36fd5cbb" /></a>
+</td>
+<td><a href="/product/1419">Zumo Reflectance Sensor Array</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/2508"><img alt="" src="https://a.pololu-files.com/picture/0J5567.50x40.jpg?8e6eb0d5915374a83ab0c977f5d63f23" /></a>
+</td>
+<td><a href="/product/2508">Zumo Shield for Arduino, v1.2</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/2509"><img alt="" src="https://a.pololu-files.com/picture/0J10909.50x40.jpg?ca72ce1784d5e974384a55df89e9e39d" /></a>
+</td>
+<td><a href="/product/2509">Zumo Robot Kit for Arduino (No Motors)</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/2510"><img alt="" src="https://a.pololu-files.com/picture/0J10910.50x40.jpg?63cc79b0ed749447599d080d8ded8035" /></a>
+</td>
+<td><a href="/product/2510">Zumo Robot for Arduino (Assembled with 75:1 HP Motors)</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/2521"><img alt="" src="https://a.pololu-files.com/picture/0J10900.50x40.jpg?52c148c65d3404f07804beb288845f7d" /></a>
+</td>
+<td><a href="/product/2521">Zumo Shield for Arduino, v1.3</a></td>
+</tr>
+</table>
+</div>
+</div></div>
+
+<!-- CONTENTS_END -->
+<div id='footer'>
+<p class='share'>
+<span class="image_text_link"><a href="/docs/0J57/2.c?print=1"><img alt="" src="https://a.pololu-files.com/assets/printer-448cebb2a5016700db2565421ada6e98f90fabe5885d8cd3cca1a3854748e146.png" /></a><a href="/docs/0J57/2.c?print=1">Print</a></span>
+<span class="image_text_link"><a href="mailto:?body=https%3A%2F%2Fwww.pololu.com%2Fdocs%2F0J57%2F2.c&amp;subject"><img alt="" src="https://a.pololu-files.com/assets/email-f2957b324fa09a7d81ed64679a6b9454647ad40514cd7b1ce501aefd946f5593.png" /></a><a href="mailto:?body=https%3A%2F%2Fwww.pololu.com%2Fdocs%2F0J57%2F2.c&amp;subject">Email a friend</a></span>
+<span class="image_text_link"><a href="/feeds"><img alt="" src="https://a.pololu-files.com/assets/feed-icon-12x12-ad0e7f1965647f9414a76a1f32fb46dc73c1b2d295201b0abb56f2b2cf88bfb2.png" /></a><a href="/feeds">Feeds</a></span>
+</p>
+<p class='links'>
+<a href="/">Home</a>
+|
+<a href="https://forum.pololu.com/">Forum</a>
+|
+<a href="/blog">Blog</a>
+|
+<a href="/support">Support</a>
+|
+<a href="/ordering">Ordering Information</a>
+|
+<a href="/list">Lists</a>
+|
+<a href="/distributors">Distributors</a>
+|
+<a href="/catalog/bigorderform">BIG Order Form</a>
+|
+<a href="/about">About</a>
+|
+<a href="/contact">Contact</a>
+</p>
+<p id='copyright'>&copy; 2001<a rel="nofollow" style="text-decoration: none; color: inherit;" href="/pot/0?from=https%3A%2F%2Fwww.pololu.com%2Fdocs%2F0J57%2F2.c">–</a>2026 Pololu Corporation</p>
+</div>
+</div>
+</div>
+<div id='right_col'>
+<div class='menu' data-my-quotes='1'></div>
+<script>quote.display_list()</script>
+<div class='menu' data-mini-cart='1'></div>
+<script>cart.display_mini_cart_content()</script>
+<div><h2>Related Products</h2>
+<div>
+<table class='linkable_item_list'>
+<tr>
+<td class='img'>
+<a href="/product/1419"><img alt="" src="https://a.pololu-files.com/picture/0J4209.50x40.jpg?ef179368c8e8e4bc6e1f9a7b36fd5cbb" /></a>
+</td>
+<td><a href="/product/1419">Zumo Reflectance Sensor Array</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/2508"><img alt="" src="https://a.pololu-files.com/picture/0J5567.50x40.jpg?8e6eb0d5915374a83ab0c977f5d63f23" /></a>
+</td>
+<td><a href="/product/2508">Zumo Shield for Arduino, v1.2</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/2509"><img alt="" src="https://a.pololu-files.com/picture/0J10909.50x40.jpg?ca72ce1784d5e974384a55df89e9e39d" /></a>
+</td>
+<td><a href="/product/2509">Zumo Robot Kit for Arduino (No Motors)</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/2510"><img alt="" src="https://a.pololu-files.com/picture/0J10910.50x40.jpg?63cc79b0ed749447599d080d8ded8035" /></a>
+</td>
+<td><a href="/product/2510">Zumo Robot for Arduino (Assembled with 75:1 HP Motors)</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/2521"><img alt="" src="https://a.pololu-files.com/picture/0J10900.50x40.jpg?52c148c65d3404f07804beb288845f7d" /></a>
+</td>
+<td><a href="/product/2521">Zumo Shield for Arduino, v1.3</a></td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+
+<div id='lightbox_holder'>
+<div id='lightbox_gray_screen'></div>
+<div id='lightbox'>
+<div id='lightbox_gallery'></div>
+<div id='lightbox_content'></div>
+<div id='lightbox_right'><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+<div id='lightbox_left'><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
+<div id='lightbox_close'>
+<a href='#' title='Close'><i class="fa fa-times" aria-hidden="true"></i></a>
+</div>
+<div id='lightbox_full'>
+<a href='#' title='View image'><i class="fa fa-expand" aria-hidden="true"></i></a>
+</div>
+</div>
+</div>
+
+<div id='header_small_top'>
+<!-- / this has to go first since it takes up 100% of the width and would block clicking on other parts -->
+<div id='header_center_right'>
+<span data-login-ui='login'>
+<a href="/account/login?account%5Burl%5D=https%3A%2F%2Fwww.pololu.com%2Fdocs%2F0J57%2F2.c">Log In</a>
+</span>
+<span data-login-ui='my_account'>
+<a title="My account" data-login-ui="my_account_link" href="/account"></a>
+</span>
+
+</div>
+<div id='header_small_left'>
+<a href="/"><img width="118" height="30" alt="Pololu Robotics &amp; Electronics" class="logo_pololu_only" src="https://a.pololu-files.com/assets/header_pololu_only-fff6349c8769e6b2e59624d6dceacac4422156c5ac8b8b23532f0e93678bb981.png" /></a>
+</div>
+<div id='header_small_right'>
+<a href="/cart"><img width="30" height="30" alt="Shopping cart" src="https://a.pololu-files.com/assets/cart-bf4bf66669c9b9288e6e972718067855ecdcdfc80622cfea29ac04b29478f873.png" /></a>
+</div>
+</div>
+<div id='header_small_bottom'>
+<div id='header_small_right'>
+(702) 262-6648<br/>
+<a href="/ordering">Same-day shipping, worldwide</a>
+</div>
+<div id='header_small_left'>
+<a id="menu_button" onclick="return false;" href="/catalog/menu"><img width="30" height="30" alt="Menu" src="https://a.pololu-files.com/assets/menu-2023bba099d8fd2a25d8e1803c5bdf0aa0a024d9d585000ff9aec2c8a436b29a.png" /></a>
+</div>
+</div>
+<div id='header_small_menu'>
+<div class='header_small_menu_columns'>
+<a href="/catalog/menu">Shop</a>
+<a href="/blog">Blog</a>
+<a href="https://forum.pololu.com/">Forum</a>
+<a href="/support">Support</a>
+</div>
+<!-- / specify local variable id to set an id for the form, mainly for use with testing -->
+<form action='/search' id='header_small_search'>
+<div class='search'><input autocomplete='off' class='search_input mini_search_input' data-autocomplete-search='true' id='header_small_search_input' name='query' placeholder='Search' type='text'><input alt='' class='search_button' src='https://a.pololu-files.com/assets/magglass-d28c6b7b9d1f35858a702b71e13b678bfdee962d795c7ad2426ed9b19ccac5e8.png' type='image' value='go'>
+</div>
+</form>
+
+<a title="My account" href="/account">My account</a>
+<a data-feedback="true" href="/feedback/new?account%5Burl%5D=https%3A%2F%2Fwww.pololu.com%2Fdocs%2F0J57%2F2.c">Comments or questions?</a>
+<a href="/about">About Pololu</a>
+<a href="/contact">Contact</a>
+<a href="/ordering">Ordering information</a>
+<a href="/distributors">Distributors</a>
+</div>
+<div id='gray_screen'></div>
+<script>
+menuInit();
+</script>
+
+<div id='header_holder'>
+<table id='header'>
+<tr id='header_top'>
+<td id='header_logo' rowspan='2'>
+<a href="/"><img width="219" height="69" alt="Pololu Robotics and Electronics" class="logo" style="max-width: 230px;" src="https://a.pololu-files.com/assets/header_pololu_no_padding-e37eb899d2ec2ded9153a53ad9e0e6e12861f762e2c3bafb4ca40e79a85d149e.png" /></a>
+</td>
+<td colspan='16' id='header_address'>
+<div id='header_account_links'>
+<span data-login-ui='login'>
+<a href="/account/login?account%5Burl%5D=https%3A%2F%2Fwww.pololu.com%2Fdocs%2F0J57%2F2.c">Log In</a>
+</span>
+<span data-login-ui='my_account'>
+<a title="My account" data-login-ui="my_account_link" href="/account"></a>
+|
+<a href="/account">My Account</a>
+|
+</span>
+<div data-login-ui='logout'>
+<form data-login-ui="logout" action="https://www.pololu.com/account/logout" accept-charset="UTF-8" method="post"><input type="hidden" name="utf8" value="✓" /><input type="hidden" name="session_id" value="**SESSION_ID_STUB**" /><button class="btn-link" name="log-out-button">Log Out</button></form>
+</div>
+
+|
+<a href="/cart">Shopping Cart <img width="16" height="16" alt="" src="https://a.pololu-files.com/assets/cart-bf4bf66669c9b9288e6e972718067855ecdcdfc80622cfea29ac04b29478f873.png" /></a>
+<script>dynamic_user_login.init()</script>
+</div>
+<p class='phone_number'>
+US toll free: 1-877-7-POLOLU ~
+(702) 262-6648<br/>
+<a href="/ordering">Same-day shipping, worldwide</a>
+</p>
+</td>
+</tr>
+<tr id='header_links'>
+<th class=''>
+<a href="/">Catalog</a>
+</th>
+<td>&nbsp;</td>
+<th>
+<a href="https://forum.pololu.com/">Forum</a>
+</th>
+<td>&nbsp;</td>
+<th class=''>
+<a href="/blog">Blog</a>
+</th>
+<td>&nbsp;</td>
+<th class='selected'>
+<a href="/support">Support</a>
+</th>
+<td>&nbsp;</td>
+<th class=''>
+<a href="/ordering">Ordering</a>
+</th>
+<td>&nbsp;</td>
+<th class=''>
+<a href="/distributors">Distributors</a>
+</th>
+<td>&nbsp;</td>
+<th class=''>
+<a href="/about">About</a>
+</th>
+<td>&nbsp;</td>
+<th class=''>
+<a href="/contact">Contact</a>
+</th>
+<td class='last'></td>
+</tr>
+</table>
+</div>
+<div id='left_col'>
+<div class='menu' id='menu_search'>
+<div>
+<!-- / specify local variable id to set an id for the form, mainly for use with testing -->
+<form action='/search' id='sidebar_search'>
+<div class='search'><input autocomplete='off' class='search_input mini_search_input' data-autocomplete-search='true' id='sidebar_search_input' name='query' placeholder='Search' type='text'><input alt='' class='search_button' src='https://a.pololu-files.com/assets/magglass-d28c6b7b9d1f35858a702b71e13b678bfdee962d795c7ad2426ed9b19ccac5e8.png' type='image' value='go'>
+</div>
+</form>
+
+</div>
+</div>
+<div class='menu'>
+<h2><a data-feedback="true" href="">Feedback</a></h2>
+<div>
+<a class="menu_visible_link" data-feedback="true" href="">Comments or questions?</a>
+</div>
+</div>
+<div class='menu'>
+<h2><a href="/category/31/services">Services</a></h2>
+<div>
+<ul>
+<li>
+<a href="/product/749">Custom Laser Cutting</a>
+</li>
+<li>
+<a href="/product/446">SMT Stencils</a>
+</li>
+</ul>
+</div>
+</div>
+<div class='menu'>
+<h2><a href="/">Products</a></h2>
+<div>
+<!-- sidebar_categories --><h3><a href="/category/42/new-products">New Products</a></h3>
+<h3><span class="specials_category"><a href="/specials">Specials!</a></span></h3>
+<hr />
+<h3><a href="/category/2/robot-kits">Robots</a></h3>
+<ul>
+	<li><a href="/category/76/3pi-robots-and-accessories">3pi</a></li>
+	<li><a href="/category/210/balboa-robot-and-accessories">Balboa</a></li>
+	<li><a href="/category/327/collaborative-robots">Cobot</a></li>
+	<li><a href="/category/202/romi-chassis-and-accessories">Romi</a></li>
+	<li><a href="/category/129/zumo-robots-and-accessories">Zumo</a></li>
+	<li><a href="/category/3/robot-kits-with-soldering">Kits, Soldering</a></li>
+	<li><a href="/category/4/robot-kits-without-soldering">Kits, No Soldering</a></li>
+</ul>
+<h3><a href="/category/6/electronics">Electronics</a></h3>
+<ul>
+	<li><a href="/category/125/arduino-compatible">Arduino</a></li>
+	<li><a href="/category/39/cables-and-wire">Cables and Wires</a></li>
+	<li><a href="/category/13/computer-interface">Computer Interface</a></li>
+	<li><a href="/category/19/connectors">Connectors</a></li>
+	<li><a href="/category/64/development-boards-programmable-controllers">Development Boards</a></li>
+	<li><a href="/category/20/leds">LEDs</a></li>
+	<li><a href="/category/9/motion-control-modules">Motor Control</a></li>
+	<li><a href="/category/321/power">Power</a></li>
+	<li><a href="/category/14/electronics-prototyping">Prototyping</a></li>
+	<li><a href="/category/150/raspberry-pi">Raspberry Pi</a></li>
+	<li><a href="/category/135/relay-modules">Relays</a></li>
+	<li><a href="/category/7/sensors">Sensors</a></li>
+	<li><a href="/category/102/maestro-usb-servo-controllers">Servo Control</a></li>
+	<li><a href="/category/136/voltage-regulators">Voltage Regulators</a></li>
+</ul>
+<h3><a href="/category/21/mechanical-components">Mechanical</a></h3>
+<ul>
+	<li><a href="/category/231/ball-casters">Ball Casters</a></li>
+	<li><a href="/category/230/brackets">Brackets</a></li>
+	<li><a href="/category/26/chassis">Chassis</a></li>
+	<li><a href="/category/25/hardware">Hardware</a></li>
+	<li><a href="/category/127/linear-actuators">Linear Actuators</a></li>
+	<li><a href="/category/22/motors-and-gearboxes">Motors</a></li>
+	<li><a href="/category/179/motor-shaft-adapters">Motor Shaft Adapters</a></li>
+	<li><a href="/category/205/servos">Servos</a></li>
+	<li><a href="/category/87/stepper-motors">Stepper Motors</a></li>
+	<li><a href="/category/61/tamiya-products">Tamiya Products</a></li>
+	<li><a href="/category/5/tools">Tools</a></li>
+	<li><a href="/category/232/tracks">Tracks</a></li>
+	<li><a href="/category/234/wheels">Wheels</a></li>
+</ul>
+<h3><a href="/category/109/shirts">Shirts</a></h3>
+<ul>
+	<li><a href="/category/237/pololu-balboa-t-shirts">Balboa T-Shirts</a></li>
+	<li><a href="/category/194/pololu-zumo-t-shirts">Zumo T-Shirts</a></li>
+	<li><a href="/category/193/pololu-circuit-logo-t-shirts">Logo T-Shirts</a></li>
+</ul>
+</div>
+</div>
+
+<div class='menu'>
+<h2>Community</h2>
+<div>
+<ul>
+<li>
+<a data-lightbox-link="true" data-lightbox-height="34rem" data-lightbox-width="36rem" href="/account/communication-preferences">Mailing list</a>
+</li>
+<li>
+<a href="/blog">Pololu Blog</a>
+</li>
+<li>
+<a href="/blog/engage-your-brain">Engage Your Brain</a>
+</li>
+<li>
+<a href="/blog/community-projects">Community Projects</a>
+</li>
+<li>
+<span class="image_text_link"><a href="/feeds"><img alt="" src="https://a.pololu-files.com/assets/feed-icon-12x12-ad0e7f1965647f9414a76a1f32fb46dc73c1b2d295201b0abb56f2b2cf88bfb2.png" /></a><a href="/feeds">Feeds</a></span>
+</li>
+<li>
+<span class="image_text_link"><a href="mailto:?body=https%3A%2F%2Fwww.pololu.com%2Fdocs%2F0J57%2F2.c&amp;subject"><img alt="" src="https://a.pololu-files.com/assets/email-f2957b324fa09a7d81ed64679a6b9454647ad40514cd7b1ce501aefd946f5593.png" /></a><a href="mailto:?body=https%3A%2F%2Fwww.pololu.com%2Fdocs%2F0J57%2F2.c&amp;subject">Email a friend</a></span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id='mathjax'></div>
+</body>
+</html>
